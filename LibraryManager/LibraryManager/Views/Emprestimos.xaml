@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LibraryManager.Views.Emprestimos">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="addEmprestimo" Text="Realizar Empréstimo" Clicked="addEmprestimo_Clicked" FlexLayout.AlignSelf="End"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label  Text="Empréstimos" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,20,0,0"  FontAttributes="Bold"/>
+            <StackLayout Margin="10, 0, 10, 0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="Livro" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Medium" WidthRequest="90"/>
+                <Label Text="Cliente" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Medium" Margin="10,0,10,0"/>
+                <Label Text="Func." VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Text="Em Dia" VerticalTextAlignment="Center" HorizontalOptions="End" FontAttributes="Bold" FontSize="Medium"/>
+                <BoxView WidthRequest="1"/>
+            </StackLayout>
+            <ScrollView x:Name="MainScroll" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ListView x:Name="lstEmprestimo" Margin="0,0,0,20" ItemTapped="lstEmprestimo_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10,0" Orientation="Horizontal" BackgroundColor="AliceBlue" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding NomeLivro}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" WidthRequest="100"/>
+                                    <Label Text="{Binding NomeCliente}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" Margin="-20,0, 0,0" WidthRequest="60"/>
+                                    <Label Text="{Binding NomeFuncionario}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" Margin="-20,0,-20,0" WidthRequest="60"/>
+                                    <Frame WidthRequest="5" HeightRequest="5" CornerRadius="40" BackgroundColor="{Binding Color}" Margin="0,0,20,0" VerticalOptions="Center"  HorizontalOptions="End" Padding="5,5,5,5" />
+                                    <BoxView WidthRequest="1"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Grid MinimumHeightRequest="60" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lblDisponivel"  Text="Empréstimos Ativos: " ></Label>
+                <Switch Grid.Row="0" Grid.Column="1" x:Name="swEstado" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Start" Toggled="swEstado_Toggled"  />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

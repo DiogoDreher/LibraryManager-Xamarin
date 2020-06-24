@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LibraryManager.Views.ClienteCRUD">
+    <ContentPage.Content>
+        <ScrollView x:Name="MainScroll" Margin="0,0,0,20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+                <Label Text="Nome" />
+                <Entry Text="{Binding Nome}" />
+                <Label Text="Telefone" />
+                <Entry Text="{Binding Telefone}" Keyboard="Telephone" />
+                <Label Text="Endereço" />
+                <Entry Text="{Binding Endereco}" />
+                <Label Text="Ativo"  VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                <Switch IsToggled="{Binding Estado}"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                <Button x:Name="btnGravar" CornerRadius="4" BackgroundColor="#4bb543" Text="Gravar" Clicked="btnGravar_Clicked" />
+                <Button x:Name="btnApagar" CornerRadius="4" BackgroundColor="#f32013" Text="Apagar" Clicked="btnApagar_Clicked" />
+                <Button x:Name="btnCancelar" CornerRadius="4" Text="Cancelar" Clicked="btnCancelar_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

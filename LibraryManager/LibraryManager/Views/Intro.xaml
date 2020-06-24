@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LibraryManager.Views.Intro">
+    <ContentPage.Content>
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Gestor de Biblioteca" FontSize="Large" HorizontalTextAlignment="Center"  FontAttributes="Bold"/>
+                <Button Grid.Row="3" Grid.ColumnSpan="2" x:Name="btnLivro" Text="Livros" Clicked="btnLivro_Clicked"/>
+                <Button Grid.Row="4" Grid.ColumnSpan="2" x:Name="btnCliente" Text="Clientes" Clicked="btnCliente_Clicked"/>
+                <Button Grid.Row="5" Grid.ColumnSpan="2" x:Name="btnFuncionario" Text="Funcionários" Clicked="btnFuncionario_Clicked"/>
+                <Button Grid.Row="6" Grid.ColumnSpan="2" x:Name="btnEmprestimo" Text="Empréstimos" Clicked="btnEmprestimo_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
